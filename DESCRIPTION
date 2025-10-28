@@ -2,9 +2,11 @@ Package: ConsensusMetaDA
 Title: ConsensusMetaDA: an R Package for consensus-based differential abundance analysis of metagenomic data
 Version: 1.0.0
 Date: 2025-08-28
-Authors@R:
+Authors@R: c(
     person("Manoharan", "Kumar", , "manoharan.kumar@jcu.edu.au", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-4828-2505"))
+    person("Matt", "Field", , "matt.field@jcu.edu.au", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-0788-6513")))
 Description: This package provides a comprehensive suite of tools for microbiome 
     data analysis including data import, preprocessing, visualization, and 
     differential abundance analysis. It supports multiple statistical methods 
