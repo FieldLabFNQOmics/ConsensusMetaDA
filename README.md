@@ -24,7 +24,7 @@ required packages
 # 
 # if (!require("ConsensusMetaDA", quietly = TRUE)) {
 #   if (!require("remotes", quietly = TRUE)) install.packages("remotes")
-#   remotes::install_github("kmanoharan01/ConsensusMetaDA")
+#   remotes::install_github("FieldLabFNQOmics/ConsensusMetaDA")
 # }
 
 
