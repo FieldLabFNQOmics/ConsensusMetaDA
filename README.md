@@ -1,4 +1,4 @@
-# MetaConsensusDA
+# ConsensusMetaDA
 
 ConsensusMetaDA is an R package for microbiome analysis using multiple algorithms - reaching consensus. No one tool perform best DA anlayes on metaganome data. Hence it needs a consensus approach to obtain more robust differential abundant microbiome. ConsensusMetaDA helps achieve this using five popularly used tools. ConsensusMetaDA uses popular biom format and samples table as input to perform DA along with it generates standard microbiome visualization plots such as Alpha Diversity, Beta Diversity, Rarefaction curve, Bidirectional plot and Scale plot at various taxa levels.
 
