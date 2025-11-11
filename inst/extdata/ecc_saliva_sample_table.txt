@@ -1,4 +1,4 @@
-SampleID	Age_Group	Site
+SampleID	Group	Site
 Indv1	Control	Site2
 Indv2	Case	Site2
 Indv3	Case	Site2
