@@ -20,14 +20,14 @@ head(metadata)
 
 # Step 1: Identify the most frequent group
 most_frequent_group <- metadata %>%
-  dplyr::count(Age_Group) %>%             # Replace 'Group' with the column containing "Lake" or "Watershed"
+  dplyr::count(Group) %>%             # Replace 'Group' with the column containing "Lake" or "Watershed"
   dplyr::arrange(desc(n)) %>%
   dplyr::slice(1) %>%
-  dplyr::pull(Age_Group)
+  dplyr::pull(Group)
 
 # Step 2: Filter for the most frequent group
 filtered_metadata <- metadata %>%
-  dplyr::filter(Age_Group == most_frequent_group)
+  dplyr::filter(Group == most_frequent_group)
 
 
 # Loop to generate 100 replicates
@@ -39,8 +39,8 @@ for (j in 1:10) {
   dir.create(dir_name, showWarnings = FALSE)  # Create the directory, suppress warning if it exists
   setwd(paste0("./GWMC_HOT_COLD/", dir_name))
   
-  # Randomly assign "Case" or "Control" to Age_Group
-  replicate_data <- filtered_metadata %>% dplyr::mutate(Age_Group = sample(c("Case", "Control"), n(), replace = TRUE))
+  # Randomly assign "Case" or "Control" to Group
+  replicate_data <- filtered_metadata %>% dplyr::mutate(Group = sample(c("Case", "Control"), n(), replace = TRUE))
   
   # Print the replicate number and data
   print(paste("Replicate", j))
@@ -100,14 +100,14 @@ head(metadata)
 
 # Step 1: Identify the most frequent group
 most_frequent_group <- metadata %>%
-  dplyr::count(Age_Group) %>%             # Replace 'Group' with the column containing "Lake" or "Watershed"
+  dplyr::count(Group) %>%             # Replace 'Group' with the column containing "Lake" or "Watershed"
   dplyr::arrange(desc(n)) %>%
   dplyr::slice(1) %>%
-  dplyr::pull(Age_Group)
+  dplyr::pull(Group)
 
 # Step 2: Filter for the most frequent group
 filtered_metadata <- metadata %>%
-  dplyr::filter(Age_Group == most_frequent_group)
+  dplyr::filter(Group == most_frequent_group)
 
 
 # Loop to generate 100 replicates
@@ -119,8 +119,8 @@ for (j in 1:10) {
   dir.create(dir_name, showWarnings = FALSE)  # Create the directory, suppress warning if it exists
   setwd(paste0("./Office/", dir_name))
   
-  # Randomly assign "Case" or "Control" to Age_Group
-  replicate_data <- filtered_metadata %>% dplyr::mutate(Age_Group = sample(c("Case", "Control"), n(), replace = TRUE))
+  # Randomly assign "Case" or "Control" to Group
+  replicate_data <- filtered_metadata %>% dplyr::mutate(Group = sample(c("Case", "Control"), n(), replace = TRUE))
   
   # Print the replicate number and data
   print(paste("Replicate", j))
