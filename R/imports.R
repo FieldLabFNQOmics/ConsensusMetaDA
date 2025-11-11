@@ -13,7 +13,7 @@
 NULL
 
 utils::globalVariables(c(
-  "Abundance", "Age_Group", "Class", "Family", "Genus", "Kingdom",
+  "Abundance", "Group", "Class", "Family", "Genus", "Kingdom",
   "Mean_Abundance", "Order", "Phylum", "Sample", "Taxa",
   "padj_ADAPT", "padj_ALDEx2", "padj_DESeq2", "padj_edgeR", "padj_metaSeq"
 ))
