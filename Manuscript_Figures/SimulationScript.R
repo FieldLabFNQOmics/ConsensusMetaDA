@@ -86,7 +86,7 @@ for (s in spike) {
       metadata <- read.table("sample_table.txt", sep = "\t", header = TRUE) # Simulated groups
       
       row.names(metadata) <- metadata$SampleID
-      metadata$Age_Group <- metadata$Metadata3
+      metadata$Group <- metadata$Metadata3
       
       
       write.table(metadata, "sample_table2.txt", sep = "\t", row.names = FALSE, col.names = TRUE, quote = FALSE)
