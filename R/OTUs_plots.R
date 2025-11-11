@@ -29,7 +29,7 @@
 #' @note
 #' This function expects:
 #' \itemize{
-#'   \item Sample metadata must contain 'Age_Group' column with groups
+#'   \item Sample metadata must contain 'Group' column with groups
 #'   \item Taxonomy table must contain standard ranks: Kingdom, Phylum, Class, Order, Family, Genus, Species
 #'   \item Working directory must be writable for output files
 #' }
@@ -375,14 +375,14 @@ OTUs_plots <- function( build_OTU_counts_output = NULL,
   build_OTU_counts_output_species_data$Species <- factor(build_OTU_counts_output_species_data$Species, levels = level_species)
 
 
-  scale_plot_kingdom <- ggplot(data=build_OTU_counts_output_kingdom_data,aes(x=Sample,y=Abundance,fill=Kingdom)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-  scale_plot_phylum <- ggplot(data=build_OTU_counts_output_phylum_data,aes(x=Sample,y=Abundance,fill=Phylum)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-  scale_plot_class <- ggplot(data=build_OTU_counts_output_class_data,aes(x=Sample,y=Abundance,fill=Class)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-  scale_plot_order <- ggplot(data=build_OTU_counts_output_order_data,aes(x=Sample,y=Abundance,fill=Order)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-  scale_plot_family <- ggplot(data=build_OTU_counts_output_family_data,aes(x=Sample,y=Abundance,fill=Family)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-  scale_plot_genus <- ggplot(data=build_OTU_counts_output_genus_data,aes(x=Sample,y=Abundance,fill=Genus)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-  #scale_plot_species <- ggplot(data=build_OTU_counts_output_species_data,aes(x=Sample,y=Abundance,fill=Species)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme( legend.position = "", axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-  #scale_plot_species2 <- ggplot(data=build_OTU_counts_output_species_data,aes(x=Sample,y=Abundance,fill=Species)) + facet_grid(~Age_Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme( legend.position = "bottom", axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  scale_plot_kingdom <- ggplot(data=build_OTU_counts_output_kingdom_data,aes(x=Sample,y=Abundance,fill=Kingdom)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  scale_plot_phylum <- ggplot(data=build_OTU_counts_output_phylum_data,aes(x=Sample,y=Abundance,fill=Phylum)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  scale_plot_class <- ggplot(data=build_OTU_counts_output_class_data,aes(x=Sample,y=Abundance,fill=Class)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  scale_plot_order <- ggplot(data=build_OTU_counts_output_order_data,aes(x=Sample,y=Abundance,fill=Order)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  scale_plot_family <- ggplot(data=build_OTU_counts_output_family_data,aes(x=Sample,y=Abundance,fill=Family)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  scale_plot_genus <- ggplot(data=build_OTU_counts_output_genus_data,aes(x=Sample,y=Abundance,fill=Genus)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme(  axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  #scale_plot_species <- ggplot(data=build_OTU_counts_output_species_data,aes(x=Sample,y=Abundance,fill=Species)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme( legend.position = "", axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+  #scale_plot_species2 <- ggplot(data=build_OTU_counts_output_species_data,aes(x=Sample,y=Abundance,fill=Species)) + facet_grid(~Group,scales="free") + geom_bar(aes(), stat="identity", position="stack") + scale_fill_manual(values = colors_to_use) + theme( legend.position = "bottom", axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
   ggsave("scale_plot_kingdom.pdf", plot = scale_plot_kingdom, width = 15, height = 10)
   ggsave("sscale_plot_phylum.pdf", plot = scale_plot_phylum, width = 15, height = 10)
@@ -407,9 +407,9 @@ OTUs_plots <- function( build_OTU_counts_output = NULL,
 
 
 
-  treat_list <- unique(sample_data(build_OTU_counts_output)$Age_Group)
+  treat_list <- unique(sample_data(build_OTU_counts_output)$Group)
 
-  # treat_list <- unique(sample_data(build_OTU_counts_output)$Age_Group)
+  # treat_list <- unique(sample_data(build_OTU_counts_output)$Group)
   # Initialize a list to store the results of all comparisons
   all_comparisons_results <- list()
 
@@ -421,7 +421,7 @@ OTUs_plots <- function( build_OTU_counts_output = NULL,
     for (other_treatment in treat_list) {
       if (treatment != other_treatment) {
 
-        contrast_list <- c(contrast_list, list(c("Age_Group", treatment, other_treatment)))
+        contrast_list <- c(contrast_list, list(c("Group", treatment, other_treatment)))
 
         contrast_pair <- paste0(treatment, "_vs_", other_treatment)
         cat("Running comparison:", contrast_pair, "\n")
