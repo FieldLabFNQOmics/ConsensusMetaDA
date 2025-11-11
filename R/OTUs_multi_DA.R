@@ -224,9 +224,9 @@ OTUs_multi_DA <- function(build_OTU_counts_output,
     stop("A build_OTU_counts_output object is not provided. Please provide filenames with full path and rerun.")
   }
 
-  treat_list <- unique(sample_data(build_OTU_counts_output)$Age_Group)
+  treat_list <- unique(sample_data(build_OTU_counts_output)$Group)
 
-  # treat_list <- unique(sample_data(build_OTU_counts_output)$Age_Group)
+  # treat_list <- unique(sample_data(build_OTU_counts_output)$Group)
   # Initialize a list to store the results of all comparisons
   all_comparisons_results <- list()
 
@@ -241,7 +241,7 @@ OTUs_multi_DA <- function(build_OTU_counts_output,
 
       if (treatment != other_treatment) {
 
-        contrast_list <- c(contrast_list, list(c("Age_Group", treatment, other_treatment)))
+        contrast_list <- c(contrast_list, list(c("Group", treatment, other_treatment)))
 
         contrast_pair <- paste0(treatment, "_vs_", other_treatment)
         cat("Running comparison:", contrast_pair, "\n")
@@ -258,7 +258,7 @@ OTUs_multi_DA <- function(build_OTU_counts_output,
 
         # Subset the samples based on the pair of treatments
         filtered_sample_data <- filtered_sample_data <- sample_data(build_OTU_counts_output)[
-          sample_data(build_OTU_counts_output)$Age_Group %in% c(treatment, other_treatment), ]
+          sample_data(build_OTU_counts_output)$Group %in% c(treatment, other_treatment), ]
 
         # Filter OTU table and taxonomy based on filtered sample data
         filtered_OTU_table <- otu_table(build_OTU_counts_output)[, rownames(filtered_sample_data)]
@@ -270,7 +270,7 @@ OTUs_multi_DA <- function(build_OTU_counts_output,
         build_OTU_subset <- phyloseq(filtered_OTU_table,  filtered_sample_data)
 
         # Convert the subsetted phyloseq object to an edgeR-compatible object
-        test_phylo_reads_edgeR <- phyloseq_to_edgeR(build_OTU_subset, group = "Age_Group")
+        test_phylo_reads_edgeR <- phyloseq_to_edgeR(build_OTU_subset, group = "Group")
 
         # Perform differential abundance analysis
         et <- edgeR::exactTest(test_phylo_reads_edgeR)
@@ -353,10 +353,10 @@ OTUs_multi_DA <- function(build_OTU_counts_output,
         print("Running ADAPT Analysis...")
 
         # Convert phyloseq object to a suitable format for ADAPT
-        #   adapt_input <- phyloseq_to_edgeR(build_OTU_subset, group = "Age_Group")
+        #   adapt_input <- phyloseq_to_edgeR(build_OTU_subset, group = "Group")
 
         # Run ADAPT (modify parameters as needed)
-        adapt_results <- ADAPT::adapt(build_OTU_subset, cond.var = "Age_Group")
+        adapt_results <- ADAPT::adapt(build_OTU_subset, cond.var = "Group")
 
         DAtaxa_result <- ADAPT::summary(adapt_results, select="all")
 
@@ -384,7 +384,7 @@ OTUs_multi_DA <- function(build_OTU_counts_output,
         meta_obj <- cumNorm(meta_obj, p = cumNormStat(meta_obj))
 
         # Define model matrix for differential analysis
-        mod <- model.matrix(~ Age_Group, data = pData(pheno_data))
+        mod <- model.matrix(~ Group, data = pData(pheno_data))
 
         # Fit metagenomeSeq model
         fit_meta <- fitFeatureModel(meta_obj, mod)
