@@ -4,7 +4,7 @@
 library(ggplot2)
 
 ############### Number of significant DAs from each tools #########
-cold_hot_Office <-  read.table(file = "./Data/cold_hot_Office_data.txt", sep = "\t", header = TRUE)
+cold_hot_Office <-  read.table(file = "./Data/cold_hot_all_updated.txt", sep = "\t", header = TRUE)
 
 cold_hot_Office$Tools
 cold_hot_Office$Tools_Values
