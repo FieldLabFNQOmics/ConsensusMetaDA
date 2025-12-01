@@ -1,4 +1,7 @@
+##Load library
+
 library(sparseDOSSA)
+
 setwd("./Manuscript_Figures/Data/")
 # Define the number of repetitions
 num_reps <- 100
@@ -100,6 +103,21 @@ for (s in spike) {
 }
 
 ######################## Simulation data to biom and DA analyses ##############
+
+##Load libraries
+
+library(ggplot2)
+library(phyloseq)
+library(DESeq2)
+library(ALDEx2)
+library(edgeR)
+library(metagenomeSeq)
+library(ADAPT)
+library(dplyr)
+library(tibble)
+library(vegan)
+library(ggplot2)
+library(ConsensusMetaDA)
 
 setwd(paste0("./Manuscript_Figures/Data/spike", s, "_percent", p, "/reps", i, "/"))
 
