@@ -9,9 +9,9 @@ or
 unzip ../Data/emp_deblur_150bp.subset_2k.rare_5000.biom
 
 ## emp
-biome_file <- "./emp_deblur_150bp.subset_2k.rare_5000.biom"
+biome_file <- "./Data/emp_deblur_150bp.subset_2k.rare_5000.biom"
 
-sample_table_file <-  "../Data/samples_table_emp.txt"
+sample_table_file <-  "./Data/samples_table_emp.txt"
 
 
 ## emp
