@@ -1,5 +1,5 @@
 library(sparseDOSSA)
-setwd("./Manuscript_Figures/")
+setwd("./Manuscript_Figures/Data/")
 # Define the number of repetitions
 num_reps <- 100
 
@@ -95,6 +95,45 @@ for (s in spike) {
       
       # Print progress
       cat("Completed: spike =", s, ", percent =", p, ", rep =", i, "\n")
+    }
+  }
+}
+
+######################## Simulation data to biom and DA analyses ##############
+
+setwd(paste0("./Manuscript_Figures/Data/spike", s, "_percent", p, "/reps", i, "/"))
+
+num_reps <- 100
+
+# Define parameter ranges
+#spike <- c(1,2,3,4,5,10)
+
+spike <- c(10)
+
+#Decimal Percentage
+
+dpercent <- c("0.05", "0.10", "0.15","0.25","0.50","1")
+
+# Loop through each spike strength
+for (s in spike) {
+  # Loop through each percent spiked
+  for (p in dpercent) {
+    # Loop through each repetition
+    for (i in 1:num_reps) {
+      
+      setwd(paste0("./Manuscript_Figures/Data/spike", s, "_percent", p, "/reps", i, "/"))
+      
+      system("module load python3/3.10.4")
+      
+      system("~/.local/bin/biom convert -i simulation_counts_data.txt   -o simulation_counts_data.biom --table-type='OTU table' --to-json")
+      
+      sample_t1 <- "sample_table2.txt"
+      
+      test_biom <- "./simulation_counts_data.biom"
+      
+      sim_Rep_build <- build_OTU_counts(test_biom, sample_t1)
+      
+      OTUs_multi_DA(sim_Rep_build)
     }
   }
 }
