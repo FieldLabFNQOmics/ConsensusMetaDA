@@ -1,3 +1,16 @@
+# Load the packages
+library(ggplot2)
+library(phyloseq)
+library(DESeq2)
+library(ALDEx2)
+library(edgeR)
+library(metagenomeSeq)
+library(ADAPT)
+library(dplyr)
+library(tibble)
+library(vegan)
+library(ggplot2)
+
 setwd("./Manuscript_Figures/")
 
 print(i)
