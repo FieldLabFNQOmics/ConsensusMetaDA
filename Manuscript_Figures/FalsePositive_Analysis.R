@@ -1,11 +1,11 @@
-setwd("./GWMC_HOT_COLD/")
+setwd("./Manuscript_Figures/")
 
 print(i)
 print(filtered_metadata)
 
-biome_file <- "./GWMC_HOT_COLD/GWMC_HOT_COLD_genus_table.biom"
+biome_file <- "./Data/GWMC_HOT_COLD_genus_table.biom"
 
-sample_table_file <- "./GWMC_HOT_COLD_metadata.csv"
+sample_table_file <- "./Data/GWMC_HOT_COLD_metadata.csv"
 
 GWMC_HOT_COLD <- build_OTU_counts(biom = biome_file, sample_table = sample_table_file)
 
