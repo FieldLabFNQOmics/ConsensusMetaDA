@@ -20,8 +20,8 @@ for (s in spike) {
     # Loop through each repetition
     for (i in 1:num_reps) {
       # Define folder name with spike and percent parameters
-      main_folder <- paste0("/path/fig4b/test/spike", s, "_percent", p)
-      rep_folder <- paste0(main_folder, "/GroudTrue0_reps", i)
+      main_folder <- paste0("./Manuscript_Figures/spike", s, "_percent", p)
+      rep_folder <- paste0(main_folder, "/reps", i)
       
       # Create directories if they do not exist
       if (!dir.exists(main_folder)) {
@@ -83,13 +83,13 @@ for (s in spike) {
       head(synthetic_data)
       
       #rep1$OTU_count
-      metadata <- read.table("sample_table.txt", sep = "\t", header = TRUE) # Simulated groups
+      metadata <- read.table("temp_sample_table.txt", sep = "\t", header = TRUE) # Simulated groups
       
       row.names(metadata) <- metadata$SampleID
       metadata$Group <- metadata$Metadata3
       
       
-      write.table(metadata, "sample_table2.txt", sep = "\t", row.names = FALSE, col.names = TRUE, quote = FALSE)
+      write.table(metadata, "sample_table.txt", sep = "\t", row.names = FALSE, col.names = TRUE, quote = FALSE)
       
       identical(colnames(synthetic_data), rownames(metadata))
       
