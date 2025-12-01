@@ -14,8 +14,6 @@ library(ConsensusMetaDA)
 
 setwd("./Manuscript_Figures/")
 
-print(i)
-print(filtered_metadata)
 
 biome_file <- "./Data/GWMC_HOT_COLD_genus_table.biom"
 
