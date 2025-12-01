@@ -1,13 +1,26 @@
 
+# Load the packages
+library(ggplot2)
+library(phyloseq)
+library(DESeq2)
+library(ALDEx2)
+library(edgeR)
+library(metagenomeSeq)
+library(ADAPT)
+library(dplyr)
+library(tibble)
+library(vegan)
+library(ggplot2)
+
+
 ############### Figure 2: Differential abundance UpSet and Venn Diagram ##################
 
-
-#1 Marine plastics
+## Load data Marine plastics
 biome_file <- "./Data/sed_plastic_rosato_ASVs_table.biom"
 
 sample_table_file <-  "./Data/sed_plastic_rosato_metadata.tsv"
 
-## Marine plastics
+## Load data to create Phyloseq Object
 sediment <- build_OTU_counts(biom = biome_file, sample_table = sample_table_file)
 
 ## Marine plastics Differential abundance
