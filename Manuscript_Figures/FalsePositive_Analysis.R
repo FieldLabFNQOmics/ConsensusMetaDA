@@ -64,7 +64,7 @@ for (j in 1:10) {
   #dir_name2 = paste0(dir_name)
   
   
-  # biome_file <- "./GWMC_HOT_COLD/GWMC_HOT_COLD_genus_table.biom"
+  # biome_file <- "./Data/GWMC_HOT_COLD_genus_table.biom"
   
   #  sample_table_file <-  paste0("filtered_labeled_metadata_replicate_", j, ".txt")
   
@@ -77,10 +77,10 @@ for (j in 1:10) {
 for (j in 1:10) {
   dir_name <- paste0("Replicate_", j)
   
-  setwd(paste0("./GWMC_HOT_COLD/", dir_name))
+  setwd(paste0("./Data/", dir_name))
   
   
-  biome_file <- "./GWMC_HOT_COLD/GWMC_HOT_COLD_genus_table.biom"
+  biome_file <- "./Data/GWMC_HOT_COLD_genus_table.biom"
   
   sample_table_file <-  paste0("filtered_labeled_metadata_replicate_", j, ".txt")
   
@@ -124,12 +124,12 @@ filtered_metadata <- metadata %>%
 
 # Loop to generate 100 replicates
 for (j in 1:10) {
-  setwd("./Office/")
+  setwd("./Data/")
   
   # Create a new directory for each replicate
   dir_name <- paste0("Replicate_", j)
   dir.create(dir_name, showWarnings = FALSE)  # Create the directory, suppress warning if it exists
-  setwd(paste0("./Office/", dir_name))
+  setwd(paste0("./Data/", dir_name))
   
   # Randomly assign "Case" or "Control" to Group
   replicate_data <- filtered_metadata %>% dplyr::mutate(Group = sample(c("Case", "Control"), n(), replace = TRUE))
