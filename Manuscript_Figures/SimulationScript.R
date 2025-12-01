@@ -1,5 +1,5 @@
 library(sparseDOSSA)
-setwd("/path/fig4b/")
+setwd("./Manuscript_Figures/")
 # Define the number of repetitions
 num_reps <- 100
 
