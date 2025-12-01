@@ -14,7 +14,7 @@ GWMC_HOT_COLD_DA <- OTUs_multi_DA(GWMC_HOT_COLD)
 
 #### Sample 1: GWMC_HOT_COLD ########
 
-metadata <- read.table("./GWMC_HOT_COLD_metadata.csv", sep = "\t", header = TRUE)
+metadata <- read.table("./Data/GWMC_HOT_COLD_metadata.csv", sep = "\t", header = TRUE)
 
 head(metadata)
 
@@ -32,12 +32,12 @@ filtered_metadata <- metadata %>%
 
 # Loop to generate 100 replicates
 for (j in 1:10) {
-  setwd("./GWMC_HOT_COLD/")
+  setwd("./Data/")
   
   # Create a new directory for each replicate
   dir_name <- paste0("Replicate_", j)
   dir.create(dir_name, showWarnings = FALSE)  # Create the directory, suppress warning if it exists
-  setwd(paste0("./GWMC_HOT_COLD/", dir_name))
+  setwd(paste0("./Data/", dir_name))
   
   # Randomly assign "Case" or "Control" to Group
   replicate_data <- filtered_metadata %>% dplyr::mutate(Group = sample(c("Case", "Control"), n(), replace = TRUE))
@@ -85,9 +85,9 @@ for (j in 1:10) {
 setwd("./Office/")
 
 
-biome_file <- "Office_genus_table.biom"
+biome_file <- "./Data/Office_genus_table.biom"
 
-sample_table_file <- "Office_metadata_sample_table.txt"
+sample_table_file <- "./Data/Office_metadata_sample_table.txt"
 
 Office <- build_OTU_counts(biom = biome_file, sample_table = sample_table_file)
 
@@ -139,9 +139,9 @@ for (j in 1:10) {
 for (j in 1:10) {
   dir_name <- paste0("Replicate_", j)
   
-  setwd(paste0("./Office/", dir_name))
+  setwd(paste0("./Data/", dir_name))
   
-  biome_file <- "./Office/Office_genus_table.biom"
+  biome_file <- "./Data/Office_genus_table.biom"
   
   sample_table_file <-  paste0("filtered_labeled_metadata_replicate_", j, ".txt")
   
