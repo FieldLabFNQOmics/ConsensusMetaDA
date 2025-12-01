@@ -4,7 +4,7 @@
 library(ggplot2)
 
 ############### Number of significant DAs from each tools #########
-cold_hot_Office <-  read.table(file = "./Data/cold_hot_all_updated.txt", sep = "\t", header = TRUE)
+cold_hot_Office <-  read.table(file = "./Data/Cold_hot_Office_FP_Data.txt", sep = "\t", header = TRUE)
 
 cold_hot_Office$Tools
 cold_hot_Office$Tools_Values
@@ -42,7 +42,7 @@ ggsave("fig4a.pdf",  fig4a = fig4a, width = 15, height = 10)
 
 ############### Number of significant DAs from each tools output of simulation data #########
 
-spike10_simulation <-  read.table(file = "./Data/spike10_simulation_updated.txt", sep = "\t", header = TRUE)
+spike10_simulation <-  read.table(file = "./Data/spike10_simulation_Data.txt", sep = "\t", header = TRUE)
 
 
 # Define group-specific max values and x-axis limits
