@@ -9,7 +9,7 @@ cold_hot_Office <-  read.table(file = "./Data/Cold_hot_Office_FP_Data.txt", sep 
 cold_hot_Office$Tools
 cold_hot_Office$Tools_Values
 
-fig4a <- ggplot(spike10, aes(x = Tools_Values, y = Tools, color = Tools, fill = Tools)) +
+fig4a <- ggplot(cold_hot_Office, aes(x = Tools_Values, y = Tools, color = Tools, fill = Tools)) +
   geom_dotplot(binwidth = 2, stackdir = "center", dotsize = 0.7) +  # Set binwidth
   scale_color_manual(values = c("forestgreen", "firebrick", "gold", "purple", "darkorange", 
                                 "dodgerblue",  "cyan", 
