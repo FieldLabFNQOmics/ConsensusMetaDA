@@ -207,7 +207,7 @@ OTUs_plots <- function( build_OTU_counts_output = NULL,
   abline(0, 1)
 
   # Generate rarefaction curves
-  #rarecurve(Data_t, step = 1, sample = raremax, col = "blue", cex = 0.4)
+  rarecurve(Data_t, step = 1, sample = raremax, col = "blue", cex = 0.4)
   dev.off()
 
 
