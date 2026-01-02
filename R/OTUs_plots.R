@@ -251,7 +251,8 @@ OTUs_plots <- function( build_OTU_counts_output = NULL,
 
     # Create the plot for Shannon and Fisher diversity indices
     richness_plot <- plot_richness(tax_glom_physeq, measures = c("Shannon"), x = "Age_Group", color = "Age_Group") +
-      scale_color_manual(values = c("dodgerblue", "orange2", "maroon","navy")) +
+      scale_color_manual(values = c("royalblue4", "deepskyblue", "blue", "cyan2", "darkorchid", "gold1", "forestgreen", "firebrick", "mediumspringgreen",
+    "darkorange1", "saddlebrown", "deeppink", "slategray2", "seagreen", "bisque")) +
       theme_minimal() +
       theme(panel.grid = element_blank(), panel.border = element_blank(), axis.line = element_line(color = "black")) +
       ggtitle(paste("Richness at", tax_level, "level")) +
