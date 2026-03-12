@@ -32,7 +32,7 @@ ConsensusMetaDA is simplified into two functions:
 * ```build_OTU_counts()``` generate an phyloseq object that contain OTU reads counts (using biome, sample counts and taxa files)
 * ```OTU_multi_DA()``` perform DA analysis (all possible pairwise comparisons)
 
-Below the core functionality of ConsensusMetaDA as well as how to plot results using the OTU_plots function.
+Below the core functionality of ConsensusMetaDA as well as how to plot results using the OTUs_plots function.
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
@@ -291,7 +291,7 @@ grid.draw(ecc_saliva_DA$Control_vs_Case$VennDiagram)
 
 Creates Five different plots and saves them as pdf files. (1) Alpha diversity - Shannon, (2) Beta diversity – Principal Coordinate Analyses (PcoA), (3) rare faction curve and (4) Scaled plot at taxa level 5) Bi-directional plots. These plots are generated using the ggplot2 package (Wickham, 2016).
 
-In addition, each of the 5 plots can be plotted individually using the ```OTU_plots``` function. See ```?OTU_plots``` for description, which provides wrappers for 5 different plots. Next we will plot each of these using the example data.
+In addition, each of the 5 plots can be plotted individually using the ```OTUs_plots``` function. See ```?OTUs_plots``` for description, which provides wrappers for 5 different plots. Next we will plot each of these using the example data.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
 
