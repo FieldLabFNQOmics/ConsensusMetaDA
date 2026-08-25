@@ -1,6 +1,6 @@
 # ConsensusMetaDA
 
-ConsensusMetaDA is an R package for microbiome analysis using multiple algorithms - reaching consensus. No one tool perform best DA anlayes on metaganome data. Hence it needs a consensus approach to obtain more robust differential abundant microbiome. ConsensusMetaDA helps achieve this using five popularly used tools. ConsensusMetaDA uses popular biom format and samples table as input to perform DA along with it generates standard microbiome visualization plots such as Alpha Diversity, Beta Diversity, Rarefaction curve, Bidirectional plot and Scale plot at various taxa levels.
+ConsensusMetaDA is an R package for microbiome analysis using multiple algorithms - reaching consensus. No one tool perform best DA anlayes on metaganome data. Hence it needs a consensus approach to obtain more robust differential abundant microbiome. ConsensusMetaDA helps achieve this using seven popularly used tools. ConsensusMetaDA uses popular biom format and samples table as input to perform DA along with it generates standard microbiome visualisation plots such as Alpha Diversity, Beta Diversity, Rarefaction curve, Bidirectional plot and Scale plot at various taxa levels.
 
 ## Installing consensusMetaDA
 
@@ -21,6 +21,9 @@ required packages
 # if (!require("edgeR", quietly = TRUE)) BiocManager::install("edgeR")
 # if (!require("ADAPT", quietly = TRUE)) BiocManager::install("ADAPT")
 # if (!require("metagenomeSeq", quietly = TRUE)) BiocManager::install("metagenomeSeq")
+# if (!require("metagenomeSeq", quietly = TRUE)) BiocManager::install("MaAsLin3")
+# if (!require("metagenomeSeq", quietly = TRUE)) BiocManager::install("ANCOMBC")
+#
 # 
 # if (!require("ConsensusMetaDA", quietly = TRUE)) {
 #   if (!require("remotes", quietly = TRUE)) install.packages("remotes")
@@ -36,6 +39,8 @@ library(ALDEx2)
 library(edgeR)
 library(metagenomeSeq)
 library(ADAPT)
+library(maaslin3)
+library(ANCOMBC)
 
 ```
 
