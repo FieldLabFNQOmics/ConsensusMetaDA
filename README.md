@@ -21,8 +21,8 @@ required packages
 # if (!require("edgeR", quietly = TRUE)) BiocManager::install("edgeR")
 # if (!require("ADAPT", quietly = TRUE)) BiocManager::install("ADAPT")
 # if (!require("metagenomeSeq", quietly = TRUE)) BiocManager::install("metagenomeSeq")
-# if (!require("metagenomeSeq", quietly = TRUE)) BiocManager::install("MaAsLin3")
-# if (!require("metagenomeSeq", quietly = TRUE)) BiocManager::install("ANCOMBC")
+# if (!require("MaAsLin3", quietly = TRUE)) BiocManager::install("MaAsLin3")
+# if (!require("ANCOMBC", quietly = TRUE)) BiocManager::install("ANCOMBC")
 #
 # 
 # if (!require("ConsensusMetaDA", quietly = TRUE)) {
